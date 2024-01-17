@@ -9,7 +9,7 @@ public class TestGaulois {
 		Romain minus = new Romain("Minus", 6);
 		asterix.parler("Bonjour à tous");
 		minus.parler("UN GAU.. UN GAUGAU...");
-		for(int i=0;i<3;i++) {
+		for (int i = 0; i < 3; i++) {
 			asterix.frapper(minus);
 		}
 	}

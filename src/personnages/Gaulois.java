@@ -12,14 +12,14 @@ public class Gaulois {
 	public String getNom() {
 		return nom;
 	}
-	
+
 	public void parler(String parole) {
-		System.out.println("le gaulois "+nom+" : "+parole); 
+		System.out.println("le gaulois " + nom + " : " + parole);
 	}
-	
+
 	public void frapper(Romain romain) {
-		parler("frappe le romain "+romain.getNom());
-		romain.recevoirCoup(force/3);
+		parler("frappe le romain " + romain.getNom());
+		romain.recevoirCoup(force / 3);
 	}
-	
+
 }
