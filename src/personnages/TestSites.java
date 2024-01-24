@@ -1,5 +1,5 @@
 package personnages;
 
-public enum grade {
+public class TestSites {
 
 }

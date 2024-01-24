@@ -10,10 +10,10 @@ public class TestGaulois {
 		asterix.parler(": Bonjour à tous");
 		minus.parler(": UN GAU.. UN GAUGAU...");
 		for (int i = 0; i < 3; i++) {
-			if (asterix.getForce()>0) {
+			if (asterix.getForce() > 0) {
 				asterix.frapper(minus);
 			}
-			if (minus.getForce()>0) {
+			if (minus.getForce() > 0) {
 				minus.frapper(asterix);
 			}
 		}
