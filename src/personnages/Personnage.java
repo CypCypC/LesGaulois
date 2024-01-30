@@ -31,10 +31,10 @@ public abstract class Personnage {
 	public void recevoirCoup(int degat) {
 		force = force - degat;
 		if (force > 0) {
-			parler(": aie");
+			parler(": \"aie\"");
 		} else {
 			force = 0;
-			parler(": j'abandonne");
+			parler(": \"j'abandonne\"");
 		}
 	}
 }

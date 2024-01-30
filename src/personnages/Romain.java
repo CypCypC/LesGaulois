@@ -1,9 +1,9 @@
 package personnages;
 
 public class Romain extends Personnage {
-//	private String nom;
-//	private int force;
-//
+	private String nom;
+	private int force;
+
 //	public Romain(String nom, int force) {
 //		this.nom = nom;
 //		this.force = force;
