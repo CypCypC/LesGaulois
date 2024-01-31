@@ -1,8 +1,8 @@
 package test_fonctionnel;
 
 import personnages.Gaulois;
+import personnages.Druide;
 import personnages.Grade;
-import personnages.Romain;
 import personnages.Soldat;
 import personnages.Centurion;
 import sites.Village;
@@ -67,5 +67,8 @@ public class TestGaulois {
         // Affichage après les changements
         village.afficherVillage();
         camp.afficherCamp();
+        
+        Druide panoramix = new Druide("Panoramix");
+        panoramix.concocterPotion(3);
 	}
 }
