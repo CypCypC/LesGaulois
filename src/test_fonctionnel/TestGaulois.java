@@ -70,5 +70,8 @@ public class TestGaulois {
         
         Druide panoramix = new Druide("Panoramix");
         panoramix.concocterPotion(3);
+        
+        asterix.boirePotion(panoramix.getPotion());
+        asterix.parler(" : \"J'ai " + asterix.getForce() + " de force");
 	}
 }

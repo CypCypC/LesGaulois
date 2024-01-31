@@ -10,6 +10,10 @@ public class Druide extends Gaulois {
 	public Druide(String nom) {
 		super(nom, 0);
 	}
+	
+	public Potion getPotion() {
+		return potion;
+	}
 
 	public Potion concocterPotion(int quantiteConcocte) {
 		try {

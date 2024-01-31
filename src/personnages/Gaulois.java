@@ -43,4 +43,5 @@ public class Gaulois extends Personnage {
 	protected String auteur() {
 		return "Le Gaulois ";
 	}
+	
 }

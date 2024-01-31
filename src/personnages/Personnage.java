@@ -4,7 +4,7 @@ public abstract class Personnage {
 	private String nom;
 	private int force;
 
-	public Personnage(String nom, int force) {
+	protected Personnage(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
 	}
@@ -36,5 +36,10 @@ public abstract class Personnage {
 			force = 0;
 			parler(": \"j'abandonne\"");
 		}
+	}
+	
+	public int boirePotion(Potion potion) {
+		this.force = this.force * potion.getForce();
+		return force;
 	}
 }
