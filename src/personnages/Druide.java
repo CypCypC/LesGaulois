@@ -29,4 +29,13 @@ public class Druide extends Gaulois {
 		return potion;
 	}
 
+	public void boirePotion(Gaulois buveur, Potion potion) {
+		if (buveur.getNom() != "Obelix") {
+			parler(": \"Tiens "+buveur.getNom()+", boit de la potion.\"");
+			potion.boirePotion();
+			buveur.boirePotion(potion);
+		} else {
+			parler(": \"Non pas toi Obélix\"");
+		}
+	}
 }

@@ -24,10 +24,19 @@ public abstract class Personnage {
 	}
 
 	public void frapper(Personnage cible) {
-		parler(" frappe " + cible.auteur() + cible.getNom());
-		cible.recevoirCoup(force / 3);
+		if (cible.getForce() > 0) {
+			parler(" frappe " + cible.auteur() + cible.getNom());
+			cible.recevoirCoup(calculForceFrappe());
+		}
+		else {
+			parler(": \"il est déjà a terre.\"");
+		}
 	}
 
+	protected int calculForceFrappe() {
+		return (force/3);
+	}
+	
 	public void recevoirCoup(int degat) {
 		force = force - degat;
 		if (force > 0) {
@@ -37,9 +46,8 @@ public abstract class Personnage {
 			parler(": \"j'abandonne\"");
 		}
 	}
-	
-	public int boirePotion(Potion potion) {
-		this.force = this.force * potion.getForce();
-		return force;
+	public void modifierForce(int nouvelleForce) {
+		this.force = nouvelleForce;
 	}
+	
 }

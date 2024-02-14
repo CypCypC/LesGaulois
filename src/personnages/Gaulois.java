@@ -35,6 +35,10 @@ public class Gaulois extends Personnage {
 //			parler(": j'abandonne");
 //		}
 //	}
+
+	private int forceBase = getForce();
+	private double forceBoost;
+	
 	public Gaulois(String nom, int force) {
 		super(nom, force);
 	}
@@ -42,6 +46,25 @@ public class Gaulois extends Personnage {
 	@Override
 	protected String auteur() {
 		return "Le Gaulois ";
+	}
+	
+	public void boirePotion(Potion potion) {
+		this.forceBoost = potion.getForce();
+	}
+	
+	@Override
+		protected int calculForceFrappe() {
+			int forcePotion = super.calculForceFrappe();
+			forcePotion = (int) (forcePotion * this.forceBoost);
+			usagePotion();
+			return forcePotion;
+		}
+	
+	public void usagePotion() {
+		if (this.forceBoost > 1) {
+			this.forceBoost = this.forceBoost - 0.5;
+			modifierForce((int) (this.forceBase * this.forceBoost));
+		}
 	}
 	
 }

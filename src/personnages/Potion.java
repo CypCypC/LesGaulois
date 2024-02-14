@@ -19,4 +19,11 @@ public class Potion {
 		return force;
 	}
 
+	public int boirePotion() {
+		if (this.quantite > 1) {
+			this.quantite = this.quantite - 1;
+		}
+		return quantite;
+	}
+
 }

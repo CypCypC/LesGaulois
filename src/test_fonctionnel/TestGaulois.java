@@ -10,13 +10,21 @@ import sites.Camp;
 
 public class TestGaulois {
 	public static void main(String[] args) {
+
+        Druide panoramix = new Druide("Panoramix");
+        panoramix.concocterPotion(3);
+
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		Centurion minus = new Centurion("Minus", 6);
+        panoramix.boirePotion(asterix, panoramix.getPotion());
+        asterix.parler(" : \"J'ai " + asterix.getForce() + " de force\"");
+		
 		asterix.parler(": \"Bonjour à tous\"");
 		minus.parler("\"UN GAU.. UN GAUGAU...\"");
 		for (int i = 0; i < 3; i++) {
 			if (asterix.getForce() > 0) {
 				asterix.frapper(minus);
+		        asterix.parler(" : \"J'ai " + asterix.getForce() + " de force\"");
 			}
 			if (minus.getForce() > 0) {
 				minus.frapper(asterix);
@@ -27,6 +35,7 @@ public class TestGaulois {
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
 		Gaulois obelix = new Gaulois("Obelix", 15);
 		Gaulois prolix = new Gaulois("Prolix", 2);
+        panoramix.boirePotion(obelix, panoramix.getPotion());
 
 		// Création des soldats
 		Soldat brutus = new Soldat("Brutus", 2,Grade.CENTURION);
@@ -35,7 +44,7 @@ public class TestGaulois {
 		Soldat ballondebaudrus = new Soldat("Ballondebaudrus", 3,Grade.SOLDAT);
 
         Village village = new Village(vercingetorix);
-        vercingetorix.parler(" : \"Je suis un grand guerrier et je vais créer mon village.\"");
+        vercingetorix.parler(": \"Je suis un grand guerrier et je vais créer mon village.\"");
 
         Camp camp = new Camp(minus);
 
@@ -68,10 +77,5 @@ public class TestGaulois {
         village.afficherVillage();
         camp.afficherCamp();
         
-        Druide panoramix = new Druide("Panoramix");
-        panoramix.concocterPotion(3);
-        
-        asterix.boirePotion(panoramix.getPotion());
-        asterix.parler(" : \"J'ai " + asterix.getForce() + " de force");
 	}
 }
