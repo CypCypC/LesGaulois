@@ -20,9 +20,9 @@ public class Village {
     public void ajouterVillageois(Gaulois villageois) {
         if (nombreVillageois < 4) {
             this.villageois[nombreVillageois++] = villageois;
-            chef.parler(": \"Bienvenue " + villageois.getNom() + " !\"");
+            chef.parler("Bienvenue " + villageois.getNom() + " !");
         } else {
-            chef.parler(" : \"Désolé " + villageois.getNom() + ", mon village est déjà bien rempli !\"");
+            chef.parler("Désolé " + villageois.getNom() + ", mon village est déjà bien rempli !");
         }
     }
     
@@ -34,8 +34,8 @@ public class Village {
     }
     
     public void changerChef(Gaulois nouveauChef) {
-    	chef.parler(" : \" Je laisse mon grand bouclier au grand " + nouveauChef.getNom() + ".\"");
-    	nouveauChef.parler(" : \" Merci !\"");
+    	chef.parler("Je laisse mon grand bouclier au grand " + nouveauChef.getNom() + ".");
+    	nouveauChef.parler("Merci !");
         chef = nouveauChef;
     }
 }

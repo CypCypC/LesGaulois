@@ -1,5 +1,7 @@
 package test_fonctionnel;
-
+import equipement.Casque;
+import equipement.Plastron;
+import equipement.Bouclier;
 import personnages.Gaulois;
 import personnages.Druide;
 import personnages.Grade;
@@ -14,17 +16,26 @@ public class TestGaulois {
         Druide panoramix = new Druide("Panoramix");
         panoramix.concocterPotion(3);
 
-		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois asterix = new Gaulois("Astérix", 5);
 		Centurion minus = new Centurion("Minus", 6);
         panoramix.boirePotion(asterix, panoramix.getPotion());
-        asterix.parler(" : \"J'ai " + asterix.getForce() + " de force\"");
-		
-		asterix.parler(": \"Bonjour à tous\"");
-		minus.parler("\"UN GAU.. UN GAUGAU...\"");
-		for (int i = 0; i < 3; i++) {
+        asterix.parler("J'ai " + asterix.getForce() + " de force");
+        minus.parler("J'ai " + minus.getForce() + " de force");
+        
+        Casque casque = new Casque();
+        Plastron plastron = new Plastron();
+        Bouclier bouclier = new Bouclier();
+        minus.equiperCasque(casque);
+        minus.equiperPlastron(plastron);
+        minus.equiperBouclier(bouclier);
+        
+		asterix.parler("Bonjour à tous");
+		minus.parler("UN GAU.. UN GAUGAU...");
+		for (int i = 0; i < 5; i++) {
 			if (asterix.getForce() > 0) {
 				asterix.frapper(minus);
-		        asterix.parler(" : \"J'ai " + asterix.getForce() + " de force\"");
+		        asterix.parler("J'ai " + asterix.getForce() + " de force");
+		        minus.parler("J'ai " + minus.getForce() + " de force");
 			}
 			if (minus.getForce() > 0) {
 				minus.frapper(asterix);
@@ -44,7 +55,7 @@ public class TestGaulois {
 		Soldat ballondebaudrus = new Soldat("Ballondebaudrus", 3,Grade.SOLDAT);
 
         Village village = new Village(vercingetorix);
-        vercingetorix.parler(": \"Je suis un grand guerrier et je vais créer mon village.\"");
+        vercingetorix.parler("Je suis un grand guerrier et je vais créer mon village.");
 
         Camp camp = new Camp(minus);
 

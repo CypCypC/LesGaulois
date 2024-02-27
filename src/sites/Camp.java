@@ -21,12 +21,11 @@ public class Camp {
 	public void ajouterSoldat(Soldat soldat) {
 		if (nombreSoldats < 3) {
 			this.soldats[nombreSoldats++] = soldat;
-			System.out.println(
-					"Le romain " + soldat.getNom() + " : \"Je mets mon épée au service de Rome dans le camp dirigé par "
-							+ commandant.getNom() + "\".");
+			soldat.parler("Je mets mon épée au service de Rome dans le camp dirigé par "
+					+ commandant.getNom() + ".");
 		} else {
-			System.out.println("Le romain " + commandant.getNom() + " : \"Désolé " + soldat.getNom()
-					+ ", notre camp est complet !\"");
+			commandant.parler("Désolé " + soldat.getNom()
+					+ ", notre camp est complet !");
 		}
 	}
 
@@ -39,14 +38,13 @@ public class Camp {
 
 	public void changerCommandant(Soldat nouveauCommandant) {
 		if (nouveauCommandant.getGrade().equals(Grade.CENTURION)) {
-			System.out.println("Le romain " + commandant.getNom() + " : \"Je laisse mon rôle à "
-					+ nouveauCommandant.getNom() + ".\"");
-			System.out.println("Le romain " + nouveauCommandant.getNom() + " : \"Moi " + nouveauCommandant.getNom()
-					+ ", je prends la direction du camp romain.\"");
+			commandant.parler("Je laisse mon rôle à "
+					+ nouveauCommandant.getNom() + ".");
+			nouveauCommandant.parler("Moi " + nouveauCommandant.getNom()
+					+ ", je prends la direction du camp romain.");
 			commandant = nouveauCommandant;
 		} else {
-			System.out.println("Le romain " + commandant.getNom()
-					+ " : \"Je ne peux pas laisser la direction du camp à un non-centurion.\"");
+			commandant.parler("Je ne peux pas laisser la direction du camp à un non-centurion.");
 		}
 	}
 }

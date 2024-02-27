@@ -53,12 +53,12 @@ public class Gaulois extends Personnage {
 	}
 	
 	@Override
-		protected int calculForceFrappe() {
-			int forcePotion = super.calculForceFrappe();
-			forcePotion = (int) (forcePotion * this.forceBoost);
-			usagePotion();
-			return forcePotion;
-		}
+	protected int calculForceFrappe() {
+		int forcePotion = super.calculForceFrappe();
+		forcePotion = (int) (forcePotion * this.forceBoost);
+		usagePotion();
+		return forcePotion;
+	}
 	
 	public void usagePotion() {
 		if (this.forceBoost > 1) {
