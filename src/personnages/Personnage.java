@@ -25,7 +25,7 @@ public abstract class Personnage {
 
 	public void frapper(Personnage cible) {
 		if (cible.getForce() > 0) {
-			parler(" frappe " + cible.auteur() + cible.getNom() + "avec une force de " + calculForceFrappe());
+			parler(" frappe " + cible.auteur() + cible.getNom() + " avec une force de " + calculForceFrappe());
 			cible.recevoirCoup(calculForceFrappe());
 		}
 		else {
@@ -38,7 +38,7 @@ public abstract class Personnage {
 	}
 	
 	public void recevoirCoup(int degat) {
-		force = force - degat;
+		force = force - Math.max(1, degat);
 		if (force > 0) {
 			parler("aie");
 		} else {

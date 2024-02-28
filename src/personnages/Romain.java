@@ -68,7 +68,10 @@ public class Romain extends Personnage {
 	    for (Equipement equipement : equipements) {
 	        if (equipement != null) {
 	            degat -= equipement.getBonus();
-	            System.out.println("Le " + equipement.getNomEquipement() + " absorbe " + equipement.getBonus() + " du coup.");
+	            if (degat < 1) {
+	            	degat = 1;
+	            }
+	            System.out.println("Le " + equipement.getNomEquipement() + " absorbe " + equipement.getBonus() + " du coup. dégats à subir : " + degat);
 	        }
 	    }
 
